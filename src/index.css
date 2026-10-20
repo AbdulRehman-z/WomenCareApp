@@ -1,0 +1,349 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Fraunces Variable', Georgia, serif;
+    --font-sans: 'Inter Variable', system-ui, sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+    --color-paper: var(--paper);
+    --color-sand: var(--sand);
+    --color-sage: var(--sage);
+    --color-terracotta: var(--terracotta);
+    --color-aubergine: var(--aubergine);
+    --color-cat-bg: var(--cat-bg);
+    --color-cat-ink: var(--cat-ink);
+    --color-surface: var(--surface);
+    --color-heading: var(--heading);
+    --color-accent-text: var(--accent-text);
+}
+
+:root {
+    --paper: #FAF6F0;
+    --sand: #E7D8C5;
+    --sage: #A7B7A0;
+    --terracotta: #D97B54;
+    --aubergine: #6B2E59;
+    --surface: #FFFDF9;
+    --background: var(--paper);
+    --foreground: #2B1B26;
+    --heading: #3A1B33;
+    --accent-text: #B4532F;
+    --hero-backdrop: #F8E6E0;
+    --card: var(--surface);
+    --card-foreground: #2B1B26;
+    --popover: var(--surface);
+    --popover-foreground: #2B1B26;
+    --primary: var(--aubergine);
+    --primary-foreground: #FFF8F2;
+    --secondary: #F2E9DE;
+    --secondary-foreground: var(--aubergine);
+    --muted: #F2E9DE;
+    --muted-foreground: #6E5A66;
+    --accent: #F6E4EC;
+    --accent-foreground: var(--aubergine);
+    --destructive: #B3382F;
+    --border: #E7DCCD;
+    --input: #DCCFBE;
+    --ring: var(--aubergine);
+    --chart-1: var(--aubergine);
+    --chart-2: var(--terracotta);
+    --chart-3: var(--sage);
+    --chart-4: var(--sand);
+    --chart-5: #1F1F17;
+    --radius: 1rem;
+    --sidebar: var(--paper);
+    --sidebar-foreground: #1F1F17;
+    --sidebar-primary: var(--aubergine);
+    --sidebar-primary-foreground: #FFF8F2;
+    --sidebar-accent: #F6E4EC;
+    --sidebar-accent-foreground: var(--aubergine);
+    --sidebar-border: #E7DCCD;
+    --sidebar-ring: var(--aubergine);
+    --cat-bg: #F9EAF1;
+    --cat-ink: #6B2E59;
+}
+
+.dark {
+    --paper: #1E1519;
+    --sand: #3A2D30;
+    --sage: #6F8A76;
+    --terracotta: #E58A62;
+    --aubergine: #8E4478;
+    --surface: #2A1E24;
+    --background: var(--paper);
+    --foreground: #F4EBE4;
+    --heading: #F8E4EF;
+    --accent-text: #F0A27F;
+    --hero-backdrop: #422D36;
+    --card: var(--surface);
+    --card-foreground: #F4EBE4;
+    --popover: #2A1E24;
+    --popover-foreground: #F4EBE4;
+    --primary: #A4558C;
+    --primary-foreground: #FFF8F2;
+    --secondary: #35272D;
+    --secondary-foreground: #F4EBE4;
+    --muted: #35272D;
+    --muted-foreground: #BCA8B4;
+    --accent: #3F2A38;
+    --accent-foreground: #F0B8D6;
+    --destructive: #E5776D;
+    --border: #3D2E34;
+    --input: #4A3940;
+    --ring: #D58BB8;
+    --chart-1: #D58BB8;
+    --chart-2: var(--terracotta);
+    --chart-3: var(--sage);
+    --chart-4: var(--sand);
+    --chart-5: #F4EBE4;
+    --sidebar: var(--paper);
+    --sidebar-foreground: #F4EBE4;
+    --sidebar-primary: #A4558C;
+    --sidebar-primary-foreground: #FFF8F2;
+    --sidebar-accent: #3F2A38;
+    --sidebar-accent-foreground: #F0B8D6;
+    --sidebar-border: #3D2E34;
+    --sidebar-ring: #D58BB8;
+    --cat-bg: #3A2230;
+    --cat-ink: #F0B8D6;
+}
+
+.cat-pregnancy { --cat-bg: #F9EAF1; --cat-ink: #6B2E59; }
+.cat-pain { --cat-bg: #E6ECF6; --cat-ink: #2D5B8A; }
+.cat-exercise { --cat-bg: #FFF1D9; --cat-ink: #9A5B00; }
+.cat-nutrition { --cat-bg: #E8F1E9; --cat-ink: #2F6B47; }
+.cat-emotional { --cat-bg: #EFE6F7; --cat-ink: #7A52A1; }
+.cat-baby { --cat-bg: #E7F0F0; --cat-ink: #2F6F6F; }
+
+.dark .cat-pregnancy { --cat-bg: #3A2230; --cat-ink: #F0B8D6; }
+.dark .cat-pain { --cat-bg: #202A3A; --cat-ink: #9DBDE8; }
+.dark .cat-exercise { --cat-bg: #3A2D17; --cat-ink: #F0B65A; }
+.dark .cat-nutrition { --cat-bg: #1F3026; --cat-ink: #9CD0AE; }
+.dark .cat-emotional { --cat-bg: #2E2440; --cat-ink: #C6A8EA; }
+.dark .cat-baby { --cat-bg: #1C3434; --cat-ink: #8FD0D0; }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    background-image: radial-gradient(60rem 30rem at 85% -10%, color-mix(in oklab, var(--glow, var(--terracotta)) 9%, transparent), transparent 70%);
+    transition: background-color .6s;
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+    color: var(--heading);
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+  :focus-visible {
+    outline: 2px solid var(--aubergine);
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+  }
+  .dark :focus-visible { outline-color: #D58BB8; }
+}
+
+@layer utilities {
+  .hero-backdrop { border-radius: 50% 50% 0 0 / 44% 44% 0 0; background: var(--hero-backdrop); }
+  .arch { border-radius: 50% 50% 1.25rem 1.25rem / 40% 40% 1.25rem 1.25rem; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; border-radius: inherit;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}
+
+/* ---------- time-of-day tint (set by usePhase on <html>) ---------- */
+html[data-phase="dawn"] { --glow: #F08FA0; }
+html[data-phase="day"] { --glow: var(--terracotta); }
+html[data-phase="dusk"] { --glow: #B05A8C; }
+html[data-phase="night"] { --glow: #6F5BB0; }
+
+/* ---------- Living Garden scene ---------- */
+.scene {
+  --sky1:#F9D2BE; --sky2:#FEF1E2; --sun:#FFD28A; --glow:#FFE7B8;
+  --hill-far:#D5DECF; --hill-mid:#B4C4AB; --hill-near:#8DA785; --ground:#7C9A76;
+  --canopy1:#86A97E; --canopy2:#9DBD92; --canopy3:#6F9468; --trunk:#6B4A3A; --cloud:#FFFFFF;
+  --sun-y:0px;
+}
+.scene[data-phase="dawn"] {
+  --sky1:#F3A9A8; --sky2:#FFE3C8; --sun:#FFC4A0; --glow:#FFD6C0;
+  --hill-far:#DDCBD0; --hill-mid:#BBB6AE; --hill-near:#92A58A; --ground:#80977A; --sun-y:92px; --cloud:#FFF1EA;
+}
+.scene[data-phase="dusk"] {
+  --sky1:#7E4A7A; --sky2:#F2A47C; --sun:#FFB067; --glow:#FFB98A;
+  --hill-far:#A98BA0; --hill-mid:#7F7A8A; --hill-near:#5F7570; --ground:#4F6A62;
+  --canopy1:#5F8068; --canopy2:#74967A; --canopy3:#4C6D59; --trunk:#4C3438; --sun-y:118px; --cloud:#F6C9B8;
+}
+.scene[data-phase="night"] {
+  --sky1:#15122B; --sky2:#3A2A52; --sun:#FFF3D0; --glow:#B7A8E8;
+  --hill-far:#3A3560; --hill-mid:#2B3B57; --hill-near:#26433F; --ground:#1F3A36;
+  --canopy1:#2F5148; --canopy2:#3B6256; --canopy3:#24433B; --trunk:#2E2228; --cloud:#5A4B7A;
+}
+.scene .sun, .scene .moon, .scene .stars, .scene .birds, .scene .butterflies, .scene .fireflies { transition: opacity 1.2s, transform 1.8s cubic-bezier(.22,1,.36,1); }
+.scene .sun { transform: translateY(var(--sun-y)); }
+.scene[data-phase="night"] .sun, .scene .moon, .scene .stars, .scene .fireflies { opacity: 0; }
+.scene[data-phase="night"] .moon, .scene[data-phase="night"] .stars, .scene[data-phase="night"] .fireflies { opacity: 1; }
+.scene[data-phase="night"] .birds, .scene[data-phase="night"] .butterflies { opacity: 0; }
+.scene .sun-rays { transform-origin: 310px 110px; animation: spin 140s linear infinite; }
+.scene .sun-glow { transform-origin: 310px 110px; animation: pulse 6s ease-in-out infinite; }
+.scene .sway { animation: sway 6s ease-in-out infinite alternate; transform-origin: 148px 210px; }
+.scene .grass { transform-origin: 50% 100%; transform-box: fill-box; animation: grass 3.6s ease-in-out infinite alternate; }
+.scene .cloud { animation: cloud 70s linear infinite; }
+.scene .nod { transform-origin: 216px 318px; animation: nod 6s ease-in-out infinite; }
+.scene .breathe { transform-origin: 216px 392px; animation: breathe 4.2s ease-in-out infinite; }
+.scene .hair-strand { transform-origin: 224px 296px; animation: sway 3.4s ease-in-out infinite alternate; }
+.scene .leaf-fall { animation: leaf-fall 11s linear infinite; }
+.scene .twinkle { animation: twinkle 3s ease-in-out infinite; }
+.scene .firefly { animation: firefly 7s ease-in-out infinite; }
+.scene .bird-fly { animation: bird-fly 24s linear infinite; }
+.scene .bird-flap { transform-origin: 12px 0; animation: flap .55s ease-in-out infinite alternate; }
+.scene .bird-visit { animation: bird-visit 22s ease-in-out infinite; }
+.scene .bird-wings-open { animation: wings-open 22s step-end infinite; }
+.scene .bird-wings-folded { animation: wings-folded 22s step-end infinite; }
+.scene .flower-bob { transform-box: fill-box; transform-origin: 50% 100%; animation: grass 4.4s ease-in-out infinite alternate; }
+
+.butterfly { position: absolute; width: 40px; height: 32px; will-change: transform; }
+.butterfly .wing { transform-origin: 20px 16px; animation: wing .26s ease-in-out infinite alternate; }
+.butterfly[data-paused="true"] .wing { animation-play-state: paused; }
+.butterfly.a { animation: flutter-a 26s ease-in-out infinite; }
+.butterfly.b { animation: flutter-b 32s ease-in-out infinite; }
+.butterfly.c { animation: flutter-c 38s ease-in-out infinite; }
+.butterfly-sit .wing { animation-duration: 1.9s; }
+.butterfly-wobble { animation: wobble 2.2s ease-in-out infinite alternate; }
+
+/* ---------- botanical bloom (category cards) ---------- */
+.bloom { --s: .35; }
+.group:hover .bloom, .group:focus-visible .bloom { --s: 1; }
+.bloom .head { transition: transform .7s cubic-bezier(.22,1,.36,1); transform: scale(calc(.55 + var(--s) * .5)) rotate(calc((1 - var(--s)) * -14deg)); }
+.bloom .petal { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.bloom .stem { }
+.bloom .sway-on-hover { transition: transform 1s ease; transform: rotate(calc((1 - var(--s)) * 4deg)); }
+
+/* ---------- ambient ---------- */
+.blob { position: fixed; z-index: -10; border-radius: 9999px; filter: blur(80px); opacity: .2; pointer-events: none; will-change: transform; }
+.dark .blob { opacity: .14; }
+.blob.b1 { width: 38rem; height: 38rem; left: -12rem; top: 10%; background: var(--aubergine); animation: blob-a 38s ease-in-out infinite alternate; }
+.blob.b2 { width: 34rem; height: 34rem; right: -10rem; top: 45%; background: var(--terracotta); animation: blob-b 44s ease-in-out infinite alternate; }
+.blob.b3 { width: 30rem; height: 30rem; left: 30%; bottom: -14rem; background: var(--sage); animation: blob-a 52s ease-in-out infinite alternate-reverse; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.12); opacity: 1; } }
+@keyframes sway { from { transform: rotate(-1.6deg); } to { transform: rotate(1.8deg); } }
+@keyframes grass { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+@keyframes cloud { from { transform: translateX(-120px); } to { transform: translateX(520px); } }
+@keyframes nod { 0%,100% { transform: rotate(0); } 40% { transform: rotate(3.5deg); } 70% { transform: rotate(-1deg); } }
+@keyframes breathe { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(1.018); } }
+@keyframes leaf-fall {
+  0% { transform: translate(0,0) rotate(0); opacity: 0; }
+  8% { opacity: 1; }
+  35% { transform: translate(var(--dx), 70px) rotate(120deg); }
+  65% { transform: translate(calc(var(--dx) * -.3), 150px) rotate(260deg); }
+  92% { opacity: 1; }
+  100% { transform: translate(calc(var(--dx) * .6), 230px) rotate(400deg); opacity: 0; }
+}
+@keyframes twinkle { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes firefly {
+  0%,100% { transform: translate(0,0); opacity: 0; }
+  20% { opacity: 1; } 50% { transform: translate(var(--fx), var(--fy)); opacity: .9; } 80% { opacity: 1; }
+}
+@keyframes bird-fly {
+  0% { transform: translate(-70px, 14px); }
+  50% { transform: translate(200px, -10px); }
+  100% { transform: translate(480px, 10px); }
+}
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(-.45); } }
+@keyframes bird-visit {
+  0%, 3% { transform: translate(-90px, -150px); opacity: 0; }
+  10% { transform: translate(-30px, -50px); opacity: 1; }
+  16%, 62% { transform: translate(0,0); opacity: 1; }
+  80% { transform: translate(240px, -150px); opacity: 1; }
+  84%, 100% { transform: translate(280px, -190px); opacity: 0; }
+}
+@keyframes wings-open { 0%, 5% { opacity: 1; } 15%, 62% { opacity: 0; } 63%, 85% { opacity: 1; } 86%, 100% { opacity: 0; } }
+@keyframes wings-folded { 0%, 5% { opacity: 0; } 15%, 62% { opacity: 1; } 63%, 100% { opacity: 0; } }
+@keyframes wing { from { transform: scaleX(1); } to { transform: scaleX(.18); } }
+@keyframes wobble { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+@keyframes flutter-a {
+  0%,100% { left: 6%; top: 66%; } 22% { left: 30%; top: 52%; } 46% { left: 58%; top: 70%; } 70% { left: 80%; top: 50%; } 86% { left: 50%; top: 58%; }
+}
+@keyframes flutter-b {
+  0%,100% { left: 88%; top: 60%; } 25% { left: 64%; top: 44%; } 50% { left: 40%; top: 62%; } 75% { left: 18%; top: 46%; }
+}
+@keyframes flutter-c {
+  0%,100% { left: 40%; top: 74%; } 30% { left: 72%; top: 64%; } 55% { left: 90%; top: 40%; } 80% { left: 22%; top: 68%; }
+}
+@keyframes blob-a { from { transform: translate(0,0) scale(1); } to { transform: translate(8rem, 6rem) scale(1.15); } }
+@keyframes blob-b { from { transform: translate(0,0) scale(1.1); } to { transform: translate(-7rem, -5rem) scale(.9); } }
+@keyframes bloom-in { from { opacity: 0; transform: scale(.9) rotate(-1.2deg); filter: blur(6px); } to { opacity: 1; transform: scale(1) rotate(0); filter: blur(0); } }
+.search-bloom[data-open] { animation: bloom-in .55s cubic-bezier(.22,1,.36,1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scene *, .butterfly, .butterfly *, .blob, .search-bloom { animation: none !important; }
+  .scene .birds, .scene .butterflies { opacity: 1; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- scrollbar: slim rounded plum thumb on a quiet track ---------- */
+html { scrollbar-width: thin; scrollbar-color: color-mix(in oklab, var(--aubergine) 55%, var(--paper)) transparent; }
+@supports selector(::-webkit-scrollbar) {
+  html { scrollbar-width: auto; scrollbar-color: auto; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: var(--paper); border-left: 1px solid var(--border); }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px; border: 3px solid var(--paper);
+    background: linear-gradient(180deg, var(--aubergine), var(--terracotta));
+  }
+  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--terracotta), var(--aubergine)); }
+}
